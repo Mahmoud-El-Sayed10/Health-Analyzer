@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -22,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Passport::hashClientSecrets();
+        Passport::loadKeysFrom(__DIR__.'/../secrets/oauth');
     }
 }
